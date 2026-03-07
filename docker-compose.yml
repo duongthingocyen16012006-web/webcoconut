@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  webcoconut:
+    image: nginx:alpine
+    ports:
+      - "9000:80"
+    volumes:
+      - .:/usr/share/nginx/html
+    restart: always
+
