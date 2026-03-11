@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hộp Quà Cao Cấp | DYCoconut</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="product-detail.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">DY<span>Coconut</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+            <a href="checkout.html" class="nav-btn">Mua ngay</a>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="product-detail-container">
+            <div class="product-gallery">
+                <img src="assets/dycoconut_hero_1772856031092.png" alt="Hộp Quà Kẹo Dừa Cao Cấp">
+            </div>
+
+            <div class="product-content">
+                <div class="product-meta">
+                    <div class="meta-item"><i class="fas fa-gift"></i> Quà tặng cao cấp</div>
+                    <div class="meta-item"><i class="fas fa-gem"></i> Sang trọng</div>
+                    <div class="meta-item"><i class="fas fa-box"></i> Full Edition</div>
+                </div>
+
+                <div class="title-frame">
+                    <h1>Hộp Quà Cao Cấp</h1>
+                </div>
+
+                <div class="product-price">450.000₫</div>
+
+                <div class="product-tabs">
+                    <div class="tab-nav">
+                        <div class="tab-btn active" onclick="openTab(event, 'intro')">Giới thiệu</div>
+                        <div class="tab-btn" onclick="openTab(event, 'ingredients')">Bộ sưu tập</div>
+                        <div class="tab-btn" onclick="openTab(event, 'origin')">Thiết kế</div>
+                    </div>
+
+                    <div id="intro" class="tab-pane active">
+                        <p>Hộp quà cao cấp DYCoconut là sự lựa chọn tinh tế để dành tặng đối tác, bạn bè và người thân. Chúng tôi không chỉ mang đến hương vị kẹo ngon nhất mà còn gửi gắm vào đó sự sang trọng và lòng hiếu khách của người dân Bến Tre.</p>
+                        <p>Mỗi hộp được thiết kế tỉ mỉ, chứa đựng những viên kẹo tinh túy nhất, hứa hẹn sẽ mang đến một trải nghiệm ẩm thực đẳng cấp và trọn vẹn.</p>
+                    </div>
+
+                    <div id="ingredients" class="tab-pane">
+                        <p>Hộp quà bao gồm các hương vị đặc trưng nhất của chúng tôi:</p>
+                        <ul class="ingredient-list">
+                            <li><i class="fas fa-check-circle"></i> Kẹo dừa nguyên bản (200g)</li>
+                            <li><i class="fas fa-check-circle"></i> Kẹo dừa lá dứa (200g)</li>
+                            <li><i class="fas fa-check-circle"></i> Kẹo dừa sầu riêng (100g)</li>
+                            <li><i class="fas fa-check-circle"></i> Kẹo dừa cacao (100g)</li>
+                        </ul>
+                    </div>
+
+                    <div id="origin" class="tab-pane">
+                        <p>Hộp được làm bằng chất liệu cao cấp, in nổi họa tiết phong cảnh Bến Tre kết hợp với phong cách tối giản hiện đại. Đây là sản phẩm đại diện cho khát vọng đưa đặc sản truyền thống vươn tầm quốc tế của DYCoconut.</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="checkout.html" class="buy-now-btn">Mua ngay ngay bây giờ <i class="fas fa-arrow-right"></i></a>
+                    <a href="index.html" class="back-to-home"><i class="fas fa-chevron-left"></i> Quay lại cửa hàng</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabPane, tabBtn;
+            tabPane = document.getElementsByClassName("tab-pane");
+            for (i = 0; i < tabPane.length; i++) {
+                tabPane[i].classList.remove("active");
+            }
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
