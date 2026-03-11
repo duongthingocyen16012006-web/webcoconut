@@ -1,14 +1,24 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+import psycopg2
 
 app = Flask(__name__)
+
+conn = psycopg2.connect(
+    host="db",
+    database="coconut",
+    user="postgres",
+    password="postgres"
+)
 
 # trang chủ
 @app.route("/")
 def home():
     return "Welcome to Coconut Shop API"
+
 @app.route("/api")
 def api():
     return {"message": "Coconut API working"}
+
 # danh sách sản phẩm
 @app.route("/coconuts")
 def coconuts():
@@ -28,4 +38,24 @@ def orders():
     ]
     return jsonify(data)
 
-app.run(host="0.0.0.0", port=5000)
+# đăng ký
+@app.route("/register", methods=["POST"])
+def register():
+
+    data = request.json
+    name = data.get("name")
+    phone = data.get("phone")
+    email = data.get("email")
+
+    cur = conn.cursor()
+
+    cur.execute(
+        "INSERT INTO users (name, phone, email) VALUES (%s,%s,%s)",
+        (name, phone, email)
+    )
+    conn.commit()
+    cur.close()
+
+    return jsonify({"message": "Register success"})
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
