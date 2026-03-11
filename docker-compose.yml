@@ -1,0 +1,31 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./:/usr/share/nginx/html
+    depends_on:
+      - api
+
+  api:
+    build: ./api
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "123456"
+      POSTGRES_USER: user
+      POSTGRES_DB: myapi_db 
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+  redis:
+    image: redis
+    volumes:
+      - ./redis_data:/data
+    command: redis-server --appendonly yes
+

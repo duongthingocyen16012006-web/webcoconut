@@ -83,7 +83,11 @@
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-tag">Bán chạy nhất</span>
-                        <a href="product-1.html"><img src="assets/dycoconut_product1_1772856047598.png" alt="Kẹo dừa nguyên bản"></a>
+                        <a href="product-1.html"><img src="assets/dycoconut_product1_1772856047598.png"
+                                alt="Kẹo dừa nguyên bản"></a>
+                        <a href="product-1.html">
+                            <img src="assets/dycoconut_product1_1772856047598.png" alt="Kẹo dừa nguyên bản">
+                        </a>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title"><a href="product-1.html">Nguyên Bản Truyền Thống</a></h3>
@@ -92,6 +96,9 @@
                         <div class="product-price-row">
                             <span class="price">125.000₫</span>
                             <a href="checkout.html" class="buy-btn">Mua ngay <i class="fas fa-shopping-bag"></i></a>
+                            <a href="checkout.html" class="buy-btn"> Thêm vào giỏ hàng <i
+                                    class="fas fa-shopping-bag"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -100,7 +107,11 @@
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-tag">Mới</span>
-                        <a href="product-2.html"><img src="assets/dycoconut_product2_1772856063108.png" alt="Kẹo dừa lá dứa"></a>
+                        <a href="product-2.html"><img src="assets/dycoconut_product2_1772856063108.png"
+                                alt="Kẹo dừa lá dứa"></a>
+                        <a href="product-2.html">
+                            <img src="assets/dycoconut_product2_1772856063108.png" alt="Kẹo dừa lá dứa">
+                        </a>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title"><a href="product-2.html">Hương Lá Dứa Tươi</a></h3>
@@ -108,7 +119,12 @@
                             nhiên mang lại hương thơm thanh mát, dịu nhẹ.</p>
                         <div class="product-price-row">
                             <span class="price">135.000₫</span>
+
                             <a href="checkout.html" class="buy-btn">Mua ngay <i class="fas fa-shopping-bag"></i></a>
+
+                            <a href="checkout.html" class="buy-btn"> Thêm vào giỏ hàng <i
+                                    class="fas fa-shopping-bag"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -116,7 +132,11 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-img">
-                        <a href="product-3.html"><img src="assets/dycoconut_hero_1772856031092.png" alt="Hộp quà kẹo dừa"></a>
+                        <a href="product-3.html"><img src="assets/dycoconut_hero_1772856031092.png"
+                                alt="Hộp quà kẹo dừa"></a>
+                        <a href="product-3.html">
+                            <img src="assets/dycoconut_hero_1772856031092.png" alt="Hộp quà kẹo dừa">
+                        </a>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title"><a href="product-3.html">Hộp Quà Cao Cấp</a></h3>
@@ -125,6 +145,9 @@
                         <div class="product-price-row">
                             <span class="price">450.000₫</span>
                             <a href="checkout.html" class="buy-btn">Mua ngay <i class="fas fa-shopping-bag"></i></a>
+                            <a href="checkout.html" class="buy-btn"> Thêm vào giỏ hàng <i
+                                    class="fas fa-shopping-bag"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -254,7 +277,9 @@
                     </div>
                     <div class="form-group">
                         <label for="cMessage">Nội dung câu chuyện</label>
-                        <textarea id="cMessage" rows="4" style="width: 100%; padding: 1rem; border: 2px solid #eee; border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: none;" placeholder="Bạn muốn chia sẻ điều gì với chúng tôi?"></textarea>
+                        <textarea id="cMessage" rows="4"
+                            style="width: 100%; padding: 1rem; border: 2px solid #eee; border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; resize: none;"
+                            placeholder="Bạn muốn chia sẻ điều gì với chúng tôi?"></textarea>
                     </div>
                     <button type="submit" class="submit-btn highlight">Gửi Lời Nhắn Ngay</button>
                 </form>
@@ -277,19 +302,19 @@
         const closeRegister = document.getElementById('closeModal');
         const finishRegister = document.getElementById('finishBtn');
         const regForm = document.getElementById('registrationForm');
-        
+
         const openModal = (m) => {
             m.classList.add('active');
             document.body.style.overflow = 'hidden';
         };
-        
+
         const closeModalFn = (m, contentId, successId, form) => {
             m.classList.remove('active');
             document.body.style.overflow = 'auto';
             setTimeout(() => {
                 document.getElementById(contentId).style.display = 'block';
                 document.getElementById(successId).style.display = 'none';
-                if(form) form.reset();
+                if (form) form.reset();
             }, 300);
         };
 
