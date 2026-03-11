@@ -89,11 +89,13 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title"><a href="product-1.html">Nguyên Bản Truyền Thống</a></h3>
-                        <p class="product-desc">Công thức và quy trình lâu đời với nước cốt dừa nguyên chất đậm đặc cho trải nghiệm dẻo mịn.</p>
+                        <p class="product-desc">Công thức và quy trình lâu đời với nước cốt dừa nguyên chất đậm đặc cho
+                            trải nghiệm dẻo mịn.</p>
                         <div class="product-price-row">
                             <span class="price">125.000₫</span>
                             <div class="product-actions">
-                                <a href="checkout.html" class="cart-btn" title="Thêm vào giỏ"><i class="fas fa-cart-plus"></i></a>
+                                <a href="checkout.html" class="cart-btn" title="Thêm vào giỏ"><i
+                                        class="fas fa-cart-plus"></i></a>
                                 <a href="checkout.html" class="buy-now-btn">Mua ngay</a>
                             </div>
                         </div>
@@ -114,7 +116,8 @@
                         <div class="product-price-row">
                             <span class="price">135.000₫</span>
                             <div class="product-actions">
-                                <a href="checkout.html" class="cart-btn" title="Thêm vào giỏ"><i class="fas fa-cart-plus"></i></a>
+                                <a href="checkout.html" class="cart-btn" title="Thêm vào giỏ"><i
+                                        class="fas fa-cart-plus"></i></a>
                                 <a href="checkout.html" class="buy-now-btn">Mua ngay</a>
                             </div>
                         </div>
@@ -130,11 +133,13 @@
                     </div>
                     <div class="product-info">
                         <h3 class="product-title"><a href="product-3.html">Hộp Quà Cao Cấp</a></h3>
-                        <p class="product-desc">Những hương vị tinh túy nhất, đóng gói sang trọng, hoàn hảo làm quà biếu.</p>
+                        <p class="product-desc">Những hương vị tinh túy nhất, đóng gói sang trọng, hoàn hảo làm quà
+                            biếu.</p>
                         <div class="product-price-row">
                             <span class="price">450.000₫</span>
                             <div class="product-actions">
-                                <a href="checkout.html" class="cart-btn" title="Thêm vào giỏ"><i class="fas fa-cart-plus"></i></a>
+                                <a href="checkout.html" class="cart-btn" title="Thêm vào giỏ"><i
+                                        class="fas fa-cart-plus"></i></a>
                                 <a href="checkout.html" class="buy-now-btn">Mua ngay</a>
                             </div>
                         </div>
@@ -315,10 +320,24 @@
         closeRegister.addEventListener('click', () => closeModalFn(registerModal, 'registerFormContent', 'successMessage', regForm));
         finishRegister.addEventListener('click', () => closeModalFn(registerModal, 'registerFormContent', 'successMessage', regForm));
 
-        regForm.addEventListener('submit', (e) => {
+        regForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            document.getElementById('registerFormContent').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
+            const data = {
+                name: document.getElementById('fullName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value
+            };
+            const res = await fetch("/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            if (res.ok) {
+                document.getElementById('registerFormContent').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            }
         });
 
         // Modal Contact logic
