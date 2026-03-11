@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán | DYCoconut</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">DY<span>Coconut</span></a>
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Quay lại trang chủ</a>
+        </div>
+    </header>
+
+    <main class="checkout-main container section-padding">
+        <h1 class="checkout-title">Thông Tin Thanh Toán</h1>
+
+        <div class="checkout-grid">
+            <!-- Form Section -->
+            <div class="checkout-form-container">
+                <form id="checkoutForm">
+                    <div class="form-section">
+                        <h3>Thông tin khách hàng</h3>
+                        <div class="form-group">
+                            <label for="checkoutName">Họ và tên</label>
+                            <input type="text" id="checkoutName" placeholder="Nhập họ và tên của bạn" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkoutPhone">Số điện thoại</label>
+                                <input type="tel" id="checkoutPhone" placeholder="Nhập số điện thoại" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutEmail">Email</label>
+                                <input type="email" id="checkoutEmail" placeholder="Nhập địa chỉ email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Địa chỉ giao hàng</h3>
+                        <div class="form-group">
+                            <label for="checkoutAddress">Địa chỉ chi tiết</label>
+                            <input type="text" id="checkoutAddress" placeholder="Số nhà, tên đường, phường/xã..." required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkoutCity">Tỉnh/Thành phố</label>
+                                <select id="checkoutCity" required>
+                                    <option value="">Chọn Tỉnh/Thành phố</option>
+                                    <option value="Bến Tre">Bến Tre</option>
+                                    <option value="Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                                    <option value="Hà Nội">Hà Nội</option>
+                                    <!-- Add more as needed -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutNote">Ghi chú (tùy chọn)</label>
+                                <input type="text" id="checkoutNote" placeholder="Ghi chú thêm cho người giao hàng">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Phương thức thanh toán</h3>
+                        <div class="payment-options">
+                            <label class="payment-option active">
+                                <input type="radio" name="payment" value="cod" checked>
+                                <div class="payment-info">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Thanh toán khi nhận hàng (COD)</span>
+                                </div>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="bank">
+                                <div class="payment-info">
+                                    <i class="fas fa-university"></i>
+                                    <span>Chuyển khoản ngân hàng</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="place-order-btn">Thanh Toán Ngay</button>
+                </form>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="order-summary-container">
+                <div class="summary-card">
+                    <h3>Chi tiết đơn hàng</h3>
+                    <div class="order-item">
+                        <img src="assets/dycoconut_product1_1772856047598.png" alt="Product">
+                        <div class="item-info">
+                            <h4>Kẹo Dừa Nguyên Bản Truyền Thống</h4>
+                            <p>Số lượng: 1</p>
+                        </div>
+                        <span class="item-price">125.000₫</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row">
+                        <span>Tạm tính</span>
+                        <span>125.000₫</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển</span>
+                        <span>30.000₫</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Tổng cộng</span>
+                        <span>155.000₫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="checkoutSuccessModal">
+        <div class="modal-content text-center">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Đặt Hàng Thành Công!</h2>
+            <p>Cảm ơn bạn đã tin tưởng DYCoconut. Chúng tôi sẽ sớm giao sản phẩm đến tay bạn.</p>
+            <p>Mã đơn hàng: <strong>#DYC-2026-888</strong></p>
+            <a href="index.html" class="submit-btn">Quay lại trang chủ</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('checkoutForm');
+        const modal = document.getElementById('checkoutSuccessModal');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Payment option toggle style
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

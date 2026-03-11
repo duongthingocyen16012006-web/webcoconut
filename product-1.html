@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyên Bản Truyền Thống | DYCoconut</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="product-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">DY<span>Coconut</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+            <a href="checkout.html" class="nav-btn">Mua ngay</a>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="product-detail-container">
+            <div class="product-gallery">
+                <img src="assets/dycoconut_product1_1772856047598.png" alt="Kẹo Dừa Nguyên Bản Truyền Thống">
+            </div>
+
+            <div class="product-content">
+                <div class="product-meta">
+                    <div class="meta-item"><i class="fas fa-crown"></i> Bán chạy nhất</div>
+                    <div class="meta-item"><i class="fas fa-leaf"></i> 100% Tự nhiên</div>
+                    <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Bến Tre</div>
+                </div>
+                
+                <div class="title-frame">
+                    <h1>Nguyên Bản Truyền Thống</h1>
+                </div>
+
+                <div class="product-price">125.000₫</div>
+
+                <div class="product-tabs">
+                    <div class="tab-nav">
+                        <div class="tab-btn active" onclick="openTab(event, 'intro')">Giới thiệu</div>
+                        <div class="tab-btn" onclick="openTab(event, 'ingredients')">Thành phần</div>
+                        <div class="tab-btn" onclick="openTab(event, 'origin')">Nguồn gốc</div>
+                    </div>
+
+                    <div id="intro" class="tab-pane active">
+                        <p>Kẹo dừa nguyên bản của DYCoconut mang trong mình tinh hoa ẩm thực xứ Dừa. Với công thức gia truyền hơn 3 đời, từng viên kẹo là sự hòa quyện tuyệt vời giữa vị béo ngậy của cốt dừa tươi và vị ngọt thanh của mạch nha nếp.</p>
+                        <p>Kẹo có độ dẻo vừa phải, không dính răng, tan chậm trong miệng để lại dư vị béo bùi khó quên. Đây là món quà đậm chất quê hương, được nhiều thực khách tin dùng và yêu thích nhất.</p>
+                    </div>
+
+                    <div id="ingredients" class="tab-pane">
+                        <p>Chúng tôi cam kết sử dụng 100% nguyên liệu tự nhiên, chọn lọc kỹ lưỡng:</p>
+                        <ul class="ingredient-list">
+                            <li><i class="fas fa-check-circle"></i> Nước cốt dừa nguyên chất (65%)</li>
+                            <li><i class="fas fa-check-circle"></i> Mạch nha nếp tinh khiết</li>
+                            <li><i class="fas fa-check-circle"></i> Đường cát trắng</li>
+                            <li><i class="fas fa-check-circle"></i> Dầu dừa tự nhiên</li>
+                        </ul>
+                    </div>
+
+                    <div id="origin" class="tab-pane">
+                        <p>Sản phẩm được chế biến trực tiếp tại huyện Mỏ Cày Nam, tỉnh Bến Tre - nơi được mệnh danh là cái nôi của kẹo dừa Việt Nam.</p>
+                        <p>Dừa được chọn lọc là những trái dừa "đủ tuổi" (dừa khô), nhiều dầu và béo nhất, được hái và chế biến ngay trong ngày để giữ trọn hương vị tươi ngon nhất của đất trời Nam Bộ.</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="checkout.html" class="buy-now-btn">Mua ngay ngay bây giờ <i class="fas fa-arrow-right"></i></a>
+                    <a href="index.html" class="back-to-home"><i class="fas fa-chevron-left"></i> Quay lại cửa hàng</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabPane, tabBtn;
+            tabPane = document.getElementsByClassName("tab-pane");
+            for (i = 0; i < tabPane.length; i++) {
+                tabPane[i].classList.remove("active");
+            }
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hương Lá Dứa Tươi | DYCoconut</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="product-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">DY<span>Coconut</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Trang chủ</a></li>
+                <li><a href="index.html#products">Sản phẩm</a></li>
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+            <a href="checkout.html" class="nav-btn">Mua ngay</a>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="product-detail-container">
+            <div class="product-gallery">
+                <img src="assets/dycoconut_product2_1772856063108.png" alt="Kẹo Dừa Hương Lá Dứa Tươi">
+            </div>
+
+            <div class="product-content">
+                <div class="product-meta">
+                    <div class="meta-item"><i class="fas fa-sparkles"></i> Mới nhất</div>
+                    <div class="meta-item"><i class="fas fa-leaf"></i> 100% Tự nhiên</div>
+                    <div class="meta-item"><i class="fas fa-tint"></i> Không chất bảo quản</div>
+                </div>
+
+                <div class="title-frame">
+                    <h1>Hương Lá Dứa Tươi</h1>
+                </div>
+
+                <div class="product-price">135.000₫</div>
+
+                <div class="product-tabs">
+                    <div class="tab-nav">
+                        <div class="tab-btn active" onclick="openTab(event, 'intro')">Giới thiệu</div>
+                        <div class="tab-btn" onclick="openTab(event, 'ingredients')">Thành phần</div>
+                        <div class="tab-btn" onclick="openTab(event, 'origin')">Nguồn gốc</div>
+                    </div>
+
+                    <div id="intro" class="tab-pane active">
+                        <p>Sự kết hợp hoàn mỹ giữa cốt dừa béo và hương thơm thanh mát của lá dứa tạo nên một sản phẩm vừa quen thuộc vừa mới lạ. Kẹo dừa lá dứa có màu xanh nhạt tự nhiên, mang lại cảm giác dễ chịu ngay khi mở bao bì.</p>
+                        <p>Hương lá dứa dịu nhẹ hòa cùng vị dừa nồng nàn giúp cân bằng vị ngọt, làm cho viên kẹo trở nên thanh tao và không hề gây ngán cho người thưởng thức.</p>
+                    </div>
+
+                    <div id="ingredients" class="tab-pane">
+                        <p>Nguyên liệu được tuyển chọn kỹ lưỡng từ thiên nhiên:</p>
+                        <ul class="ingredient-list">
+                            <li><i class="fas fa-check-circle"></i> Nước cốt dừa nguyên chất</li>
+                            <li><i class="fas fa-check-circle"></i> Chiết xuất lá dứa tươi</li>
+                            <li><i class="fas fa-check-circle"></i> Mạch nha nếp</li>
+                            <li><i class="fas fa-check-circle"></i> Đường cát</li>
+                        </ul>
+                    </div>
+
+                    <div id="origin" class="tab-pane">
+                        <p>Lá dứa được chúng tôi trồng theo mô hình hữu cơ ngay tại các liếp dừa ven sông Bến Tre, đảm bảo luôn tươi mới và không có dư lượng thuốc bảo vệ thực vật.</p>
+                        <p>Quy trình chiết xuất lá dứa hiện đại giúp giữ trọn vẹn màu xanh diệp lục và mùi hương đặc trưng, không sử dụng phẩm màu hóa học.</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="checkout.html" class="buy-now-btn">Mua ngay ngay bây giờ <i class="fas fa-arrow-right"></i></a>
+                    <a href="index.html" class="back-to-home"><i class="fas fa-chevron-left"></i> Quay lại cửa hàng</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabPane, tabBtn;
+            tabPane = document.getElementsByClassName("tab-pane");
+            for (i = 0; i < tabPane.length; i++) {
+                tabPane[i].classList.remove("active");
+            }
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) {
+                tabBtn[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
